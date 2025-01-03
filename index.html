@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Convite Davi Lucca</title>
+</head>
+
+<body>
+    <main>
+        <video autoplay loop muted class="background-video">
+            <!-- Substitua 'caminho/do/video.mp4' pelo caminho do seu arquivo de vídeo -->
+            <source src="img/720p homem aranha.mp4" type="video/mp4">
+            Seu navegador não suporta a tag de vídeo.
+        </video>
+
+        <audio id="background-music" loop>
+            <source src="img/audio mp3.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+
+        <!-- Botão para iniciar o áudio -->
+        <button id="play-button" style="display: none;">Iniciar Áudio</button>
+
+        <button id="pause-button" style="display: block;">Pausar Música</button>
+        
+        
+        <div class="content">
+            <div class="presentation">
+                <h2>🎉🕸️ <span class="underline">Contagem Regressiva</span> Davi Lucca faz 6 anos!!! 🕸️🎉</h2>
+                <p>Queridos amigos e familiares,</p>
+                <p>
+                    É com muita alegria que convidamos vocês para comemorar o 
+                    <span class="underline">6º aniversário do Davi Lucca</span>! 🥳
+                    Ele está super animado com o tema <span class="underline">Homem-Aranha</span>, 
+                    e a festa promete ser uma verdadeira aventura cheia de diversão!
+                </p>
+                <p>
+                    Estamos literalmente contando os dias! 🕒🕸️
+                </p>
+                <p>
+                    📅 <span class="underline">Data:</span> 15-03-2025
+                    ⏰ <span class="underline">Horário:</span> 19:00h<br>
+                    📍 <span>Local:</span> <a class="endress" href="https://maps.app.goo.gl/3esQH2DcuWCY55Hg9" target="_blank">Buffet Casa da Alegria - R. Marquês de Recife, 239 - Parque São Luis, São Paulo - SP, 02841-010</a>
+                </p>
+                <p>
+                    Esperamos por vocês para celebrarmos juntos esse momento tão especial para o Davi Lucca.✨
+                    
+                    <p>Com carinho, Bruna e Weverton</p>
+                    <div class="buttons-container">
+                        <a 
+                            href="https://wa.me/5511959894480?text=Olá,%20confirmo%20minha%20presença%20no%20aniversário%20do%20Davi%20Lucca!%20🥳🕸️" 
+                            class="button confirm" 
+                            target="_blank">
+                            Confirmar Presença
+                        </a>
+                        <a 
+                            href="https://wa.me/5511959894480?text=Olá,%20infelizmente%20não%20poderei%20comparecer%20ao%20aniversário%20do%20Davi%20Lucca.%20🕸️" 
+                            class="button decline" 
+                            target="_blank">
+                            Confirmar Ausência
+                        </a>
+            </div>
+            <section>
+                <div class="text"><h2>Faltam</h2></div>
+                <div class="countdown">
+                    <span class="title"></span>
+                    <div class="box">
+                        <span class="value" data-days>00</span>
+                        <span class="name">dias</span>
+                    </div>
+                    <div class="box">
+                        <span class="value" data-hours>00</span>
+                        <span class="name">horas</span>
+                    </div>
+                    <div class="box">
+                        <span class="value" data-minutes>00</span>
+                        <span class="name">minutos</span>
+                    </div>
+                    <div class="box">
+                        <span class="value" data-seconds>00</span>
+                        <span class="name">segundos</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+</body>
+
+<script src="script.js" defer></script>
+
+</html>
