@@ -31,40 +31,23 @@ setInterval(countdown, 1000);
 
 
 
-
-
-
-
-const audio = document.getElementById("background-music");
-const playButton = document.getElementById("play-button");
-const pauseButton = document.getElementById("pause-button");
-
-// Função para reproduzir o áudio
-function playAudio() {
-    audio.play()
-        .then(() => {
-            playButton.style.display = "none";
-            pauseButton.style.display = "inline";
-        })
-        .catch(error => {
-            console.error("Erro ao reproduzir o áudio:", error);
-        });
-}
-
-// Função para pausar o áudio
-function pauseAudio() {
-    audio.pause();
-    pauseButton.style.display = "none";
-    playButton.style.display = "inline";
-}
-
-// Adicionar eventos aos botões
-playButton.addEventListener("click", playAudio);
-pauseButton.addEventListener("click", pauseAudio);
-
-// Tentativa de reproduzir automaticamente ao carregar (pode ser bloqueada pelo navegador)
-window.addEventListener("load", () => {
-    audio.play().catch(() => {
-        console.log("Reprodução automática bloqueada pelo navegador.");
+window.onload = function () {
+    const video = document.getElementById('background-video');
+    
+    // Primeira tentativa de reprodução (sem áudio, com muted)
+    video.play().catch((error) => {
+        console.log("Erro ao tentar reproduzir o vídeo:", error);
     });
-});
+
+    // Adicionando um evento de clique na página para ativar o áudio
+    document.body.addEventListener('click', function () {
+        video.muted = false; // Remover o muted para ativar o áudio
+        video.play().catch((error) => {
+            console.log("Erro ao tentar reproduzir o vídeo com áudio:", error);
+        });
+    });
+};
+
+
+
+
