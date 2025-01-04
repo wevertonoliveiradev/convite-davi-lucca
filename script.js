@@ -48,9 +48,6 @@ window.onload = function () {
     video.play().catch((err) => console.log("Erro ao reproduzir vídeo:", err));
   }
 
-// //   // Simula clique no botão de som ao carregar a página
-  muteButton.click();
-
   // Evento para desbloquear som em dispositivos que exigem interação
   document.body.addEventListener("click", () => {
     if (video.paused) {
