@@ -31,21 +31,44 @@ setInterval(countdown, 1000);
 
 
 
+const video = document.getElementById("background-video");
+const muteButton = document.getElementById("mute-toggle");
+
+// Detecção de dispositivos e navegadores
+const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+const isAndroid = /Android/i.test(navigator.userAgent);
+
 window.onload = function () {
-    const video = document.getElementById('background-video');
+  // Tratamento para dispositivos iOS
+  if (isIOS) {
+    video.muted = true; // Começa com som desligado
+    video.play().catch((err) => console.log("Erro ao reproduzir vídeo no iOS:", err));
+  } else {
+    // Tentativa de reprodução automática com som desligado para outros dispositivos
+    video.play().catch((err) => console.log("Erro ao reproduzir vídeo:", err));
+  }
 
-    // iOS e Android exigem interação do usuário para iniciar vídeos com áudio
-    document.body.addEventListener('click', () => {
-        if (video.paused) {
-            video.muted = false; // Desativa mute ao clicar
-            video.play().catch(error => console.log("Erro ao reproduzir o vídeo:", error));
-        }
-    });
+// //   // Simula clique no botão de som ao carregar a página
+  muteButton.click();
 
-    // Tentativa de reprodução automática com muted
-    video.play().catch(error => console.log("Erro ao tentar reproduzir automaticamente:", error));
+  // Evento para desbloquear som em dispositivos que exigem interação
+  document.body.addEventListener("click", () => {
+    if (video.paused) {
+      video.play().catch((err) => console.log("Erro ao reproduzir o vídeo:", err));
+    }
+  });
 };
 
+// Lógica do botão de mute/unmute
+muteButton.addEventListener("click", () => {
+  if (video.muted) {
+    video.muted = false;
+    muteButton.textContent = "🔊"; // Ícone de som ativado
+  } else {
+    video.muted = true;
+    muteButton.textContent = "🔈"; // Ícone de som desativado
+  }
+});
 
 
 
