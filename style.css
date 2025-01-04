@@ -258,4 +258,8 @@ section {
         font-size: 0.7rem;
     }
 
+    .mute-button {
+        top: 75px;
+    }
+
 }
