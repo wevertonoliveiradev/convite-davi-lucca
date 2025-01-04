@@ -33,19 +33,17 @@ setInterval(countdown, 1000);
 
 window.onload = function () {
     const video = document.getElementById('background-video');
-    
-    // Primeira tentativa de reprodução (sem áudio, com muted)
-    video.play().catch((error) => {
-        console.log("Erro ao tentar reproduzir o vídeo:", error);
+
+    // iOS e Android exigem interação do usuário para iniciar vídeos com áudio
+    document.body.addEventListener('click', () => {
+        if (video.paused) {
+            video.muted = false; // Desativa mute ao clicar
+            video.play().catch(error => console.log("Erro ao reproduzir o vídeo:", error));
+        }
     });
 
-    // Adicionando um evento de clique na página para ativar o áudio
-    document.body.addEventListener('click', function () {
-        video.muted = false; // Remover o muted para ativar o áudio
-        video.play().catch((error) => {
-            console.log("Erro ao tentar reproduzir o vídeo com áudio:", error);
-        });
-    });
+    // Tentativa de reprodução automática com muted
+    video.play().catch(error => console.log("Erro ao tentar reproduzir automaticamente:", error));
 };
 
 
