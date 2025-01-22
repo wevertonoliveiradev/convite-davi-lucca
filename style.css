@@ -120,11 +120,11 @@ section {
 
 .buttons-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin-top: 10px;
     margin-bottom: 10px;
-    width: 100%;
+    width: 100px;
     max-width: 300px; /* Ajuste conforme necessário */
 }
 
